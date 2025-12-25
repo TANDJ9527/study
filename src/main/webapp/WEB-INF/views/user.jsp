@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -87,7 +88,6 @@
             padding: 10px;
             border-radius: 4px;
             margin-bottom: 20px;
-            display: none;
         }
     </style>
 </head>
@@ -98,19 +98,25 @@
             <p>用户登录</p>
         </div>
 
-        <div class="error-message" id="errorMessage">
-            用户名或密码错误
-        </div>
+        <c:if test="${not empty error}">
+            <div class="error-message">
+                ${error}
+            </div>
+        </c:if>
 
-        <form action="${pageContext.request.contextPath}/user/login" method="post">
+        <form action="${pageContext.request.contextPath}/user/login" method="post" autocomplete="off">
+            <!-- 隐藏的输入字段，用于捕获自动填充 -->
+            <input type="text" style="display:none;" name="fake_username" autocomplete="username">
+            <input type="password" style="display:none;" name="fake_password" autocomplete="password">
+            
             <div class="form-group">
                 <label for="username">用户名</label>
-                <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+                <input type="text" id="username" name="username" placeholder="请输入用户名" required autocomplete="new-password">
             </div>
 
             <div class="form-group">
                 <label for="password">密码</label>
-                <input type="password" id="password" name="password" placeholder="请输入密码" required>
+                <input type="password" id="password" name="password" placeholder="请输入密码" required autocomplete="new-password">
             </div>
 
             <button type="submit" class="btn">登录</button>
@@ -121,14 +127,6 @@
             <p><a href="${pageContext.request.contextPath}/home/index">返回首页</a></p>
         </div>
     </div>
-
-    <script>
-        // 检查是否有错误参数，如果有则显示错误消息
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('error') === '1') {
-            document.getElementById('errorMessage').style.display = 'block';
-        }
-    </script>
 </body>
 </html>
 

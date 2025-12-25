@@ -77,6 +77,7 @@
                 <li><a href="${pageContext.request.contextPath}/home/course" class="active">课程中心</a></li>
                 <li><a href="${pageContext.request.contextPath}/home/question">题库练习</a></li>
                 <li><a href="${pageContext.request.contextPath}/home/exam">模拟考试</a></li>
+                <li><a href="${pageContext.request.contextPath}/home/forum">学习社区</a></li>
             </ul>
         </nav>
         <div class="user-info">

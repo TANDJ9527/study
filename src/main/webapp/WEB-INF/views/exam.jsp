@@ -71,6 +71,34 @@
     </style>
 </head>
 <body>
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <h1>考研学习平台</h1>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="${pageContext.request.contextPath}/home/index">首页</a></li>
+                <li><a href="${pageContext.request.contextPath}/home/course">课程中心</a></li>
+                <li><a href="${pageContext.request.contextPath}/home/question">题库练习</a></li>
+                <li><a href="${pageContext.request.contextPath}/home/exam" class="active">模拟考试</a></li>
+                <li><a href="${pageContext.request.contextPath}/home/forum">学习社区</a></li>
+            </ul>
+        </nav>
+        <div class="user-info">
+            <c:choose>
+                <c:when test="${not empty sessionScope.user}">
+                    <span>欢迎, ${sessionScope.user.username}</span>
+                    <a href="${pageContext.request.contextPath}/user/logout">退出</a>
+                </c:when>
+                <c:otherwise>
+                    <a href="${pageContext.request.contextPath}/user/login">登录</a>
+                    <a href="${pageContext.request.contextPath}/user/register">注册</a>
+                </c:otherwise>
+            </c:choose>
+        </div>
+    </div>
+</header>
     <!-- 考试头部信息 -->
     <div class="exam-header">
         <h1 class="exam-title">${exam.exam_name}</h1>
