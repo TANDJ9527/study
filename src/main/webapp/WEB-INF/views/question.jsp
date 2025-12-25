@@ -2,64 +2,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="question-page">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>题库练习 - 考研学习平台</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Microsoft YaHei', Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f5f5f5; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .header { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
-        .header .container { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
-        .logo h1 { color: #4285f4; }
-        .nav ul { display: flex; list-style: none; }
-        .nav li { margin-left: 30px; }
-        .nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
-        .nav a:hover, .nav a.active { color: #4285f4; }
-        .user-info a { margin-left: 15px; text-decoration: none; color: #4285f4; }
-        .user-info span { margin-right: 15px; }
-        .main { min-height: calc(100vh - 140px); padding: 30px 0; }
-        .breadcrumb { margin-bottom: 20px; }
-        .breadcrumb a { color: #4285f4; text-decoration: none; }
-        .breadcrumb span { color: #999; margin: 0 5px; }
-        .filter-section { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 30px; }
-        .filter-title { font-weight: bold; margin-bottom: 15px; color: #4285f4; }
-        .filter-options { display: flex; flex-wrap: wrap; gap: 15px; }
-        .filter-option { padding: 8px 15px; background: #fff; border: 1px solid #ddd; border-radius: 20px; cursor: pointer; transition: all 0.3s; }
-        .filter-option:hover, .filter-option.active { background: #4285f4; color: white; border-color: #4285f4; }
-        .question-list { background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 20px; }
-        .question-item { padding: 20px; border-bottom: 1px solid #eee; }
-        .question-item:last-child { border-bottom: none; }
-        .question-header { display: flex; justify-content: space-between; margin-bottom: 10px; }
-        .question-type { background: #4285f4; color: white; padding: 3px 8px; border-radius: 4px; font-size: 0.8em; }
-        .question-difficulty { font-size: 0.9em; font-weight: bold; }
-        .difficulty-easy { color: #34a853; }
-        .difficulty-medium { color: #fbbc05; }
-        .difficulty-hard { color: #ea4335; }
-        .question-content { margin-bottom: 15px; }
-        .options { margin-left: 20px; }
-        .option { margin-bottom: 8px; }
-        .answer-area { margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 4px; }
-        .btn { display: inline-block; padding: 8px 15px; background: #4285f4; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9em; transition: background 0.3s; border: none; cursor: pointer; margin-right: 10px; }
-        .btn:hover { background: #3367d6; }
-        .btn-secondary { background: #f8f9fa; color: #333; border: 1px solid #ddd; }
-        .btn-secondary:hover { background: #e9ecef; }
-        .pagination { display: flex; justify-content: center; margin-top: 30px; gap: 10px; }
-        .page-item { padding: 8px 15px; border: 1px solid #ddd; border-radius: 4px; text-decoration: none; color: #333; }
-        .page-item.active { background: #4285f4; color: white; border-color: #4285f4; }
-        .page-item:hover:not(.active) { background: #f8f9fa; }
-        .footer { background: #333; color: white; text-align: center; padding: 20px 0; margin-top: 40px; }
-        .no-data { grid-column: 1 / -1; text-align: center; padding: 50px; color: #666; }
-
-        @media (max-width: 768px) {
-            .header .container { flex-direction: column; }
-            .nav ul { margin: 20px 0; }
-            .nav li { margin: 0 10px; }
-            .user-info { margin-top: 10px; }
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
 <!-- 页面头部 -->

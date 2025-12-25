@@ -2,51 +2,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="question-detail-page">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>题目详情 - 考研学习平台</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Microsoft YaHei', Arial, sans-serif; line-height: 1.6; color: #333; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .header { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
-        .header .container { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
-        .logo h1 { color: #4285f4; }
-        .nav ul { display: flex; list-style: none; }
-        .nav li { margin-left: 30px; }
-        .nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
-        .nav a:hover, .nav a.active { color: #4285f4; }
-        .user-info a { margin-left: 15px; text-decoration: none; color: #4285f4; }
-        .user-info span { margin-right: 15px; }
-        .main { min-height: calc(100vh - 140px); padding: 30px 0; }
-        .breadcrumb { margin-bottom: 20px; }
-        .breadcrumb a { color: #4285f4; text-decoration: none; }
-        .breadcrumb span { color: #999; margin: 0 5px; }
-        .question-detail { background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 30px; }
-        .question-header { display: flex; justify-content: space-between; margin-bottom: 20px; }
-        .question-type { background: #4285f4; color: white; padding: 3px 8px; border-radius: 4px; font-size: 0.8em; }
-        .question-difficulty { font-size: 0.9em; }
-        .difficulty-easy { color: #34a853; }
-        .difficulty-medium { color: #fbbc05; }
-        .difficulty-hard { color: #ea4335; }
-        .question-content { margin-bottom: 20px; }
-        .options { margin-left: 20px; }
-        .option { margin-bottom: 10px; }
-        .answer-area { margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 4px; }
-        .btn { display: inline-block; padding: 8px 15px; background: #4285f4; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9em; transition: background 0.3s; border: none; cursor: pointer; }
-        .btn:hover { background: #3367d6; }
-        .btn-secondary { background: #f8f9fa; color: #333; border: 1px solid #ddd; }
-        .btn-secondary:hover { background: #e9ecef; }
-        .footer { background: #333; color: white; text-align: center; padding: 20px 0; margin-top: 40px; }
-        @media (max-width: 768px) {
-            .header .container { flex-direction: column; }
-            .nav ul { margin: 20px 0; }
-            .nav li { margin: 0 10px; }
-            .user-info { margin-top: 10px; }
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
 <!-- 页面头部 -->

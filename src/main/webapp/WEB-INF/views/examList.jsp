@@ -3,63 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
-<html>
+<html class="exam-list-page">
 <head>
     <title>考试列表</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .exam-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .exam-item {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 10px;
-            background-color: #f9f9f9;
-        }
-        .exam-item:hover {
-            background-color: #f0f0f0;
-        }
-        .exam-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .exam-info {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 10px;
-        }
-        .info-item {
-            display: flex;
-            flex-direction: column;
-        }
-        .info-label {
-            font-size: 12px;
-            color: #666;
-        }
-        .info-value {
-            font-size: 14px;
-            font-weight: bold;
-        }
-        .start-exam-btn {
-            background-color: #4CAF50;
-            color: white;
-            padding: 8px 15px;
-            text-decoration: none;
-            border-radius: 3px;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        .start-exam-btn:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
     <div class="exam-list">

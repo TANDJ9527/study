@@ -7,62 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>发表新帖 - 考研学习平台</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Microsoft YaHei', Arial, sans-serif; line-height: 1.6; color: #333; background: #f5f5f5; }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-
-        .header { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
-        .header .container { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
-        .logo h1 { color: #4285f4; }
-        .nav ul { display: flex; list-style: none; }
-        .nav li { margin-left: 30px; }
-        .nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
-        .nav a:hover, .nav a.active { color: #4285f4; }
-        .user-info a { margin-left: 15px; text-decoration: none; color: #4285f4; }
-        .user-info span { margin-right: 15px; }
-
-        .main { min-height: calc(100vh - 140px); padding: 30px 0; }
-        .breadcrumb { margin-bottom: 20px; }
-        .breadcrumb a { color: #4285f4; text-decoration: none; }
-        .breadcrumb span { color: #999; margin: 0 5px; }
-
-        .post-form-container { background: #fff; border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .form-header { margin-bottom: 25px; border-bottom: 2px solid #4285f4; padding-bottom: 10px; }
-        .form-header h2 { color: #4285f4; font-size: 1.8em; }
-        .form-header p { color: #666; margin-top: 5px; }
-
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: #333; }
-        .form-control { width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px; font-family: 'Microsoft YaHei', Arial, sans-serif; transition: border 0.3s; }
-        .form-control:focus { outline: none; border-color: #4285f4; box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2); }
-        textarea.form-control { resize: vertical; min-height: 150px; }
-
-        .alert { padding: 12px 15px; border-radius: 4px; margin-bottom: 20px; }
-        .alert-error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
-        .alert-success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
-
-        .form-actions { display: flex; gap: 10px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; }
-        .btn { padding: 10px 20px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.3s; }
-        .btn-primary { background: #4285f4; color: white; }
-        .btn-primary:hover { background: #3367d6; }
-        .btn-secondary { background: #f8f9fa; color: #333; border: 1px solid #ddd; }
-        .btn-secondary:hover { background: #e9ecef; }
-
-        .footer { background: #333; color: white; text-align: center; padding: 20px 0; margin-top: 40px; }
-
-        .login-prompt { text-align: center; padding: 50px; background: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .login-prompt h3 { color: #4285f4; margin-bottom: 15px; }
-
-        @media (max-width: 768px) {
-            .header .container { flex-direction: column; }
-            .nav ul { margin: 20px 0; }
-            .nav li { margin: 0 10px; }
-            .user-info { margin-top: 10px; }
-            .form-actions { flex-direction: column; }
-            .btn { width: 100%; text-align: center; }
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
 <!-- 页面头部 -->
@@ -112,10 +57,10 @@
                 <div class="login-prompt">
                     <h3>请先登录</h3>
                     <p>发表帖子需要先登录您的账户</p>
-                    <div style="margin-top: 20px;">
+                    <div class="form-actions">
                         <a href="${pageContext.request.contextPath}/user/login" class="btn btn-primary">立即登录</a>
-                        <a href="${pageContext.request.contextPath}/user/register" class="btn btn-secondary" style="margin-left: 10px;">注册账号</a>
-                        <a href="${pageContext.request.contextPath}/home/forum" class="btn btn-secondary" style="margin-left: 10px;">返回社区</a>
+                        <a href="${pageContext.request.contextPath}/user/register" class="btn btn-secondary">注册账号</a>
+                        <a href="${pageContext.request.contextPath}/home/forum" class="btn btn-secondary">返回社区</a>
                     </div>
                 </div>
             </c:when>

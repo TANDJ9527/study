@@ -4,71 +4,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <!DOCTYPE html>
-<html>
+<html class="exam-page">
 <head>
     <title>${exam.exam_name}</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .exam-header {
-            background-color: #f5f5f5;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        .exam-title {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-        .exam-info {
-            display: flex;
-            gap: 30px;
-        }
-        .info-item {
-            display: flex;
-            flex-direction: column;
-        }
-        .info-label {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 5px;
-        }
-        .info-value {
-            font-size: 16px;
-            font-weight: bold;
-        }
-        .questions-section {
-            max-width: 800px;
-        }
-        .question-item {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-        }
-        .question-header {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-        .question-number {
-            font-weight: bold;
-        }
-        .question-type {
-            color: #666;
-        }
-        .question-content {
-            margin-bottom: 15px;
-        }
-        .options {
-            margin-left: 20px;
-        }
-        .option {
-            margin-bottom: 8px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
 <header class="header">

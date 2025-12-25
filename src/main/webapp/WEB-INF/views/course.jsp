@@ -2,67 +2,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="course-page">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>课程中心 - 考研学习平台</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Microsoft YaHei', Arial, sans-serif; background: #f5f5f5; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-        /* 头部样式 */
-        .header { background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 15px 0; }
-        .header .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo h1 { color: #4285f4; }
-        .nav ul { display: flex; list-style: none; }
-        .nav li { margin-left: 20px; }
-        .nav a { text-decoration: none; color: #333; }
-        .nav a.active { color: #4285f4; }
-
-        /* 主要内容 */
-        .main { padding: 30px 0; }
-        .page-title { font-size: 24px; margin-bottom: 20px; }
-
-        /* 课程卡片 */
-        .course-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-        .course-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .course-header { background: #4285f4; color: white; padding: 15px; }
-        .course-body { padding: 15px; }
-        .course-title { font-size: 18px; font-weight: bold; margin-bottom: 10px; }
-        .course-description { color: #666; font-size: 14px; margin-bottom: 15px; line-height: 1.5; }
-        .course-price { color: #ea4335; font-weight: bold; font-size: 16px; }
-        .btn { display: inline-block; padding: 8px 15px; background: #4285f4; color: white; text-decoration: none; border-radius: 4px; font-size: 14px; }
-        .btn-outline { background: white; color: #4285f4; border: 1px solid #4285f4; }
-        .user-info a {
-            margin-left: 15px;
-            text-decoration: none;
-            color: #4285f4;
-        }
-
-        .user-info span {
-            margin-right: 15px;
-        }
-        /* 底部 */
-        .footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 30px; }
-
-        /* 数据库信息提示 */
-        .db-info {
-            background: #e8f4fd;
-            padding: 10px 15px;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            font-size: 13px;
-            color: #666;
-        }
-
-        @media (max-width: 768px) {
-            .course-list { grid-template-columns: 1fr; }
-            .header .container { flex-direction: column; }
-            .nav ul { margin-top: 15px; }
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
 <!-- 页面头部 -->
@@ -137,7 +82,7 @@
                                         </c:otherwise>
                                     </c:choose>
                                 </p>
-                                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                                <div class="course-actions">
                                     <span class="course-price">
                                         <c:choose>
                                             <c:when test="${course.price > 0}">
@@ -158,7 +103,7 @@
                     </c:forEach>
                 </c:when>
                 <c:otherwise>
-                    <div style="grid-column: 1 / -1; text-align: center; padding: 50px; color: #666;">
+                    <div class="no-data">
                         <h3>暂无课程</h3>
                         <p>还没有任何课程数据</p>
                     </div>
